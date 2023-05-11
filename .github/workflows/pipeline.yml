@@ -3,8 +3,5 @@ name: template test
 on: [push]
 
 jobs:
-  Print-Hello-World:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo hello world
-        
+  Build:
+    uses: earnestdl/templates/.github/workflows/build.yml@main
