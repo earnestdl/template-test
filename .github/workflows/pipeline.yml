@@ -1,6 +1,6 @@
 name: template test
 
-on: workflow_dispatch
+on: [push]
 
 jobs:
   Print-Hello-World:
