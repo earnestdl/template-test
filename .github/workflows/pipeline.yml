@@ -3,13 +3,13 @@ name: Pipeline
 on: [push,workflow_dispatch]
 
 jobs:
-  BUILD:
+  Build:
     uses: earnestdl/templates/.github/workflows/build.yml@main
     with: 
       appType: bash
       appVersion: 0
       
-  DEV:
+  Deploy-DEV:
     uses: earnestdl/templates/.github/workflows/deploy.yml@main
     with: 
       deployTarget: openshift
