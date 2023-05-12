@@ -3,13 +3,13 @@ name: Pipeline
 on: [push,workflow_dispatch]
 
 jobs:
-  Build:
+  BUILD:
     uses: earnestdl/templates/.github/workflows/build.yml@main
     with: 
       appType: bash
       appVersion: 0
       
-  Deploy-DEV:
+  DEV:
     uses: earnestdl/templates/.github/workflows/deploy.yml@main
     with: 
       deployTarget: openshift
@@ -25,7 +25,7 @@ jobs:
       deployTarget: openshift
       deployEnvironment: qa
       deployRegions: "['east', 'metro']" 
-   secrets:
+    secrets:
       TOKEN_E1: ${{ secrets.TOKEN_E1_QA }}
       TOKEN_E2: ${{ secrets.TOKEN_E2_QA }}
 
