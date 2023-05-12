@@ -14,7 +14,7 @@ jobs:
     with: 
       deployTarget: openshift
       deployEnvironment: dev
-      deployRegions: [ "east", "metro"] 
+      deployRegions: "['east', 'metro']" 
     secrets:
       TOKEN_E1_DEV: ${{ secrets.TOKEN_E1_DEV }}
       TOKEN_E2_DEV: ${{ secrets.TOKEN_E2_DEV }}
