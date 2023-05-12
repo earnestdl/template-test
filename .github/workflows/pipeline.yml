@@ -9,42 +9,42 @@ jobs:
       appType: bash
       appVersion: 0
       
-  Deploy-Dev:
-    uses: earnestdl/templates/.github/workflows/deploy.yml@main
-    with: 
-      deployTarget: openshift
-      deployEnvironment: dev
-      deployRegions: [ "east", "metro"] 
-    secrets:
-      TOKEN_E1_DEV: ${{ secrets.TOKEN_E1_DEV }}
-      TOKEN_E2_DEV: ${{ secrets.TOKEN_E2_DEV }}
+#  Deploy-Dev:
+#    uses: earnestdl/templates/.github/workflows/deploy.yml@main
+#    with: 
+#      deployTarget: openshift
+#      deployEnvironment: dev
+#      deployRegions: [ "east", "metro"] 
+#    secrets:
+#      TOKEN_E1_DEV: ${{ secrets.TOKEN_E1_DEV }}
+#      TOKEN_E2_DEV: ${{ secrets.TOKEN_E2_DEV }}
 
-  Deploy-QA:
-    uses: earnestdl/templates/.github/workflows/deploy.yml@main
-    with: 
-      deployTarget: openshift
-      deployEnvironment: qa
-      deployRegions: [ "east", "metro"] 
-   secrets:
-      TOKEN_E1_DEV: ${{ secrets.TOKEN_E1_QA }}
-      TOKEN_E2_DEV: ${{ secrets.TOKEN_E2_QA }}
+#  Deploy-QA:
+#    uses: earnestdl/templates/.github/workflows/deploy.yml@main
+#    with: 
+#      deployTarget: openshift
+#      deployEnvironment: qa
+#      deployRegions: [ "east", "metro"] 
+#   secrets:
+#      TOKEN_E1_DEV: ${{ secrets.TOKEN_E1_QA }}
+#      TOKEN_E2_DEV: ${{ secrets.TOKEN_E2_QA }}
 
-  Deploy-Stress:
-    uses: earnestdl/templates/.github/workflows/deploy.yml@main
-    with: 
-      deployTarget: openshift
-      deployEnvironment: stress
-      deployRegions: [ "east", "metro"] 
-    secrets:
-      TOKEN_E1_DEV: ${{ secrets.TOKEN_E1_QA }}
-      TOKEN_E2_DEV: ${{ secrets.TOKEN_E2_QA }}
+#  Deploy-Stress:
+#    uses: earnestdl/templates/.github/workflows/deploy.yml@main
+#    with: 
+#      deployTarget: openshift
+#      deployEnvironment: stress
+#      deployRegions: [ "east", "metro"] 
+#    secrets:
+#      TOKEN_E1_DEV: ${{ secrets.TOKEN_E1_QA }}
+#      TOKEN_E2_DEV: ${{ secrets.TOKEN_E2_QA }}
 
-  Deploy-Prod:
-    uses: earnestdl/templates/.github/workflows/deploy.yml@main
-    with: 
-      deployTarget: openshift
-      deployEnvironment: prod
-      deployRegions: [ "east", "metro"] 
-    secrets:
-      TOKEN_E1_DEV: ${{ secrets.TOKEN_E1_PROD }}
-      TOKEN_E2_DEV: ${{ secrets.TOKEN_E2_PROD }}
+#  Deploy-Prod:
+#    uses: earnestdl/templates/.github/workflows/deploy.yml@main
+#    with: 
+#      deployTarget: openshift
+#      deployEnvironment: prod
+#      deployRegions: [ "east", "metro"] 
+#    secrets:
+#      TOKEN_E1_DEV: ${{ secrets.TOKEN_E1_PROD }}
+#      TOKEN_E2_DEV: ${{ secrets.TOKEN_E2_PROD }}
