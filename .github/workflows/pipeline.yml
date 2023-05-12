@@ -16,8 +16,8 @@ jobs:
       deployEnvironment: dev
       deployRegions: "['east', 'metro']" 
     secrets:
-      TOKEN_E1_DEV: ${{ secrets.TOKEN_E1_DEV }}
-      TOKEN_E2_DEV: ${{ secrets.TOKEN_E2_DEV }}
+      TOKEN_E1: ${{ secrets.TOKEN_E1_DEV }}
+      TOKEN_E2: ${{ secrets.TOKEN_E2_DEV }}
 
 #  Deploy-QA:
 #    uses: earnestdl/templates/.github/workflows/deploy.yml@main
