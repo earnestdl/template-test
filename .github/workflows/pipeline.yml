@@ -10,6 +10,7 @@ jobs:
       appVersion: 0
       
   DEV:
+    needs: BUILD
     uses: earnestdl/templates/.github/workflows/deploy.yml@main
     with: 
       deployTarget: openshift
@@ -20,6 +21,7 @@ jobs:
       TOKEN_E2: ${{ secrets.TOKEN_E2_DEV }}
 
   QA:
+    needs: DEV
     uses: earnestdl/templates/.github/workflows/deploy.yml@main
     with: 
       deployTarget: openshift
@@ -30,6 +32,7 @@ jobs:
       TOKEN_E2: ${{ secrets.TOKEN_E2_QA }}
 
   STRESS:
+    needs: QA
     uses: earnestdl/templates/.github/workflows/deploy.yml@main
     with: 
       deployTarget: openshift
@@ -40,6 +43,7 @@ jobs:
       TOKEN_E2: ${{ secrets.TOKEN_E2_QA }}
 
   PROD:
+    needs: STRESS
     uses: earnestdl/templates/.github/workflows/deploy.yml@main
     with: 
       deployTarget: openshift
