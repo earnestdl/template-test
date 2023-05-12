@@ -9,15 +9,15 @@ jobs:
       appType: bash
       appVersion: 0
       
-#  Deploy-Dev:
-#    uses: earnestdl/templates/.github/workflows/deploy.yml@main
-#    with: 
-#      deployTarget: openshift
-#      deployEnvironment: dev
-#      deployRegions: [ "east", "metro"] 
-#    secrets:
-#      TOKEN_E1_DEV: ${{ secrets.TOKEN_E1_DEV }}
-#      TOKEN_E2_DEV: ${{ secrets.TOKEN_E2_DEV }}
+  Deploy-Dev:
+    uses: earnestdl/templates/.github/workflows/deploy.yml@main
+    with: 
+      deployTarget: openshift
+      deployEnvironment: dev
+      deployRegions: [ "east", "metro"] 
+    secrets:
+      TOKEN_E1_DEV: ${{ secrets.TOKEN_E1_DEV }}
+      TOKEN_E2_DEV: ${{ secrets.TOKEN_E2_DEV }}
 
 #  Deploy-QA:
 #    uses: earnestdl/templates/.github/workflows/deploy.yml@main
