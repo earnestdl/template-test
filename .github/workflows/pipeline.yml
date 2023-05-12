@@ -5,3 +5,7 @@ on: [push,workflow_dispatch]
 jobs:
   Build:
     uses: earnestdl/templates/.github/workflows/build.yml@main
+    with: 
+      appType: bash
+      appVersion: 0
+      
