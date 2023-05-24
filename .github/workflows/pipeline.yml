@@ -3,14 +3,14 @@ name: Pipeline
 on: [push,workflow_dispatch]
 
 jobs:
-  BUILD:
+  build:
     uses: earnestdl/templates/.github/workflows/build.yml@main
     with: 
       appType: bash
       appVersion: 0
       
-  DEV:
-    needs: BUILD
+  dev:
+    needs: build
     uses: earnestdl/templates/.github/workflows/deploy.yml@main
     with: 
       deployTarget: openshift
@@ -20,8 +20,8 @@ jobs:
       TOKEN_E1: ${{ secrets.TOKEN_E1_DEV }}
       TOKEN_E2: ${{ secrets.TOKEN_E2_DEV }}
 
-  QA:
-    needs: DEV
+  qa:
+    needs: dev
     uses: earnestdl/templates/.github/workflows/deploy.yml@main
     with: 
       deployTarget: openshift
@@ -31,8 +31,8 @@ jobs:
       TOKEN_E1: ${{ secrets.TOKEN_E1_QA }}
       TOKEN_E2: ${{ secrets.TOKEN_E2_QA }}
 
-  STRESS:
-    needs: QA
+  stress:
+    needs: qa
     uses: earnestdl/templates/.github/workflows/deploy.yml@main
     with: 
       deployTarget: openshift
@@ -42,8 +42,8 @@ jobs:
       TOKEN_E1: ${{ secrets.TOKEN_E1_QA }}
       TOKEN_E2: ${{ secrets.TOKEN_E2_QA }}
 
-  PROD:
-    needs: STRESS
+  prod:
+    needs: stress
     uses: earnestdl/templates/.github/workflows/deploy.yml@main
     with: 
       deployTarget: openshift
